@@ -1,0 +1,45 @@
+<div id="content">
+  <div class="indent-content wide">
+    <div id="">
+      <p class="notice">
+        <% if flash[:notice] %>
+          <%= flash[:notice] %>
+        <% elsif flash.now[:notice] %>
+          <%= flash.now[:notice] %>
+        <% end %>
+      </p>
+      <p class="warning">
+        <% if flash[:warning] %>
+          <%= flash[:warning] %>
+        <% elsif flash.now[:warning] %>
+          <%= flash.now[:warning] %>
+        <% end %>
+      </p>
+    </div>
+    <div id="login">
+      <h4>Sign In</h4>
+      <%= form_for :user do |f| %>
+        <table class="wwFormTable" style="accountForm">
+          <tbody>
+          <tr>
+            <td class="tdLabel"><label for="user_email" class="label">Email Address:</label></td>
+            <td class="tdInput"><%= f.text_field :email %></td>
+          </tr>
+          <tr>
+            <td class="tdLabel"><label for="user_password" class="label">Password:</label></td>
+            <td class="tdInput"><%= f.password_field :password %></td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <div class="formButton"><%= f.submit "Sign In" %></div>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      <% end %>
+      <%= link_to "Forgot Your Password?", request_reset_path, method: :get %> <br>
+      <%= link_to "Create A New Account", signup_path %>
+    </div>
+  </div>
+</div>
+

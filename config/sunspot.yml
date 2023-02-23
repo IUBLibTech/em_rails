@@ -1,0 +1,7 @@
+development:
+  solr:
+    hostname: localhost
+    port: 8983
+    log_level: INFO
+    path: /solr/em
+    

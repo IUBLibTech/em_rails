@@ -1,0 +1,119 @@
+<div id="content">
+  <div class="bookinfo">
+    <div class="coverimage">
+      <%= image_tag "#{@book.thumbnail_med}" %>
+    </div>
+    <div class="bookSpecs">
+      <div class="bookTitle"><p><%= @book.title.html_safe %></p></div>
+      <div class="bookSubtitle"><p><em><%= @book.subtitle.html_safe %></em></p></div>
+      <div class="authorName">By <%= @book.author_names.join(", ") %></div>
+      <div class="buybutton">
+        <a href=
+          <% if @book.temple? %>
+             <%= temple_press_link %>
+          <% else %>
+             <%= iu_press_link %>
+          <% end %>
+             target="_blank"><%= image_tag "b-buybook.png", {alt: "Buy Book"} %></a>
+      </div>
+      <p><%= @book.press %>, <%= @book.published_year %></p>
+      <p>ISBN <%= @book.isbn %></p>
+      <p><%= @book.pages %> Pages</p>
+    </div>
+  </div>
+  <div id="bookSection">
+    <div class="column">
+      <h3>Summary</h3>
+      <p><%= @book.summary.html_safe %></p>
+    </div>
+    <div class="column">
+      <h3>Contents</h3>
+      <p><%= @book.table_of_contents.html_safe %></p>
+    </div>
+    <div class="column">
+      <h3>Biography</h3>
+      <p><%= @book.bio_text.html_safe %></p>
+    </div>
+  </div>
+  <div id="mediaSection">
+    <p class="divider">Online media for this book</p>
+    <% if @book.videos.any? %>
+      <p class="target"><a href="#video">Video</a></p>
+    <% end %>
+    <% if @book.audio.any? %>
+      <p class="target"><a href="#audio">Audio</a></p>
+    <% end %>
+    <% if @book.images.any? %>
+      <p class="target"><a href="#image">Images</a></p>
+    <% end %>
+    <div id="mediaContent">
+      <% if @book.videos.any? %>
+        <h3 id='video'>Video</h3>
+        <% @book.videos.each do |vid| %>
+          <div class="featuredMovWrap">
+            <div class="innerbox">
+              <%= link_to annotation_path(vid) do %>
+                <div class="annoImg">
+                  <div class="featurearrow"></div>
+                </div>
+              <% end %>
+              <div class="annoTitle">
+                <%= link_to vid.title.html_safe, annotation_path(vid) %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+        <div class="scroll"><a href="#top"><%= image_tag "b-scroll.png" %></a></div>
+      <% end %>
+
+      <% if @book.audio.any? %>
+        <h3 id="audio">Audio</h3>
+        <% @book.audio.each do |au| %>
+          <div class="featuredMovWrap">
+            <div class="innerbox">
+              <%= link_to annotation_path(au) do %>
+                <div class="annoAudioImg">
+                  <div class="featurearrow"></div>
+                </div>
+              <% end %>
+              <div class="annoTitle">
+                <%= link_to au.title.html_safe, annotation_path(au) %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+        <div class="scroll"><a href="#top"><%= image_tag "b-scroll.png" %></a></div>
+      <% end %>
+
+      <% if @book.images.any? %>
+        <h3 id="image">Images</h3>
+        <% @book.images.each do |img| %>
+          <div class="featuredMovWrap">
+            <div class="innerbox">
+              <%= link_to annotation_path(img) do %>
+                <div class="annoImg2">
+                  <%= image_tag "#{img.image_thumb_name("small")}" %>
+                </div>
+              <% end %>
+              <div class="annoTitle">
+                <%= link_to img.title.html_safe, annotation_path(img) %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <div class="scroll"><a href="#top"><%= image_tag "b-scroll.png" %></a></div>
+      <% end %>
+
+    </div>
+
+    <div style="clear: both;"></div>
+
+  </div>
+
+  <div style="clear: both;"></div>
+
+
+
+
+
+</div>

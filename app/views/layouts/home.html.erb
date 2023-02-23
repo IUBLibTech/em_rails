@@ -1,0 +1,118 @@
+<div id="homeintro">
+  <div id="intrologo">
+    <%= image_tag "b-onlineaccess.png" %>
+  </div>
+  <div id="introtext">
+    <h2>to Audio Field Recordings, Performance Videos, Photos and Documents</h2>
+    <p>from books and publications of<br>Indiana University Press and Temple University Press</p>
+  </div>
+</div>
+
+<div id="home">
+  <div class="featured text">
+    <h3 class="red">Welcome</h3>
+    <p>
+      Ethnomusicology Multimedia (EM) is a collaborative publishing initiative of Indiana University Press
+      and Temple University Press with the support of the Andrew W. Mellon Foundation for first books in ethnomusicology accompanied by
+      a web-based platform for audio and video materials. Ethnomusicology Multimedia seeks to enhance the value of scholarly books in
+      ethnomusicology by linking fieldwork audiovisual materials to the written text, thus providing a unique interactive experience for readers.
+    </p>
+    <h3>How to use this site</h3>
+    <ul>
+      <li><span>1</span><%= image_tag "b-signuptop.png", { "alt": "Sign up for a free account", "border": "0", "style":  "vertical-align: -6px" } %> <br>
+        This will give you access to all the multimedia on this site.</li>
+      <li><span>2</span>Search for your book<br>
+        <%= form_tag(search_path, method: :get) do %>
+          <%= text_field_tag :searchField ,params[:search], {placeholder: "Search for title, autor, or key word..."} %>
+          <%= image_submit_tag "b-search.png", {"style": "vertical-align: middle; margin-left: -.7em"} %>
+        <% end %>
+        Go to the book's page. Links to all the multimedia associated with that book will be there.
+      </li>
+      <li><span>3</span>You can also <a href="bookListing.html">order books</a> or find out more information about the book and author.
+    </ul>
+  </div>
+</div>
+<div class="featured">
+  <h3>Featured Books</h3>
+  <% @books.each do |b| %>
+  <div class="featuredBookWrap">
+    <div class="featuredBook">
+      <div class="featureImg">
+        <%= link_to book_path(b) do %>
+          <%= image_tag "#{b.thumbnail_small}", class: "bookThumb" %>
+        <% end %>
+      </div>
+      <div class="bookTitle">
+        <%= link_to book_path(b) do %>
+          <p>
+            <%= b.title.html_safe %>
+          </p>
+        <% end %>
+      </div>
+      <div class="bookSubtitle">
+        <%= link_to book_path(b) do %>
+          <p>
+            <%= b.subtitle.html_safe %>
+          </p>
+        <% end %>
+      </div>
+      <div class="authors">
+        By <span><%= b.author_names %></span>
+      </div>
+      <div class="press"><%= b.press %><br>2013</div>
+      <div class="buy">
+        <a href="<%= b.press.include?("Indiana") ? "https://iupress.org/" : "https://tupress.temple.edu/" %>" target="_blank">
+          <%= image_tag "b-buybook.png", alt: "Buy Book Online" %>
+          <%= link_to book_path(b) do %>
+            <%= image_tag "b-onlinemedia.png", alt: "View Online Media" %>
+          <% end %>
+        </a>
+      </div>
+    </div>
+  </div>
+  <% end %>
+  <div id="moreBooks"><a href="/bookListing.html">See all books...</a></div>
+</div>
+
+<div class="featured">
+  <h3>Featured Media</h3>
+  <% @annotations.each do |a| %>
+    <div class="featuredMovWrap">
+      <div class="featuredRecording">
+        <div class="featureMediaimg">
+          <% if a.media_type == "video" %>
+            <%= link_to sample_path(a) do %>
+              <div class="annoImg">
+                <div class="featurearrow"></div>
+              </div>
+            <% end %>
+            <div class="annoTitle">
+              <%= link_to a.title.html_safe, sample_path(a) %>
+            </div>
+          <% elsif a.media_type == "audio" %>
+            <%= link_to sample_path(a) do %>
+              <div class="annoAudioImg">
+                <div class="featurearrow"></div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="mediaTitle">
+          <%= a.book.title.html_safe %>
+        </div>
+        <div class="mediaSubtitle">
+          <%= a.book.subtitle.html_safe %>
+        </div>
+        <div class="authors">
+          By <%= a.book.author_names.join(", ") %>
+        </div>
+
+        <div class="mediaAnnotation">
+          <%= link_to sample_path(a) do %>
+            <%= a.title.html_safe %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

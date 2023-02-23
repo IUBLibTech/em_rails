@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Em</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+
+  <body>
+    <a name="top"></a>
+
+    <!-- Facebook template and javascript -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+        let js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    <div id="container">
+      <div id="menu">
+        <div class="menuItem"><%= link_to "Home", root_path %></div>
+        <div class="menuItem"><%= link_to "Book Listings", books_path  %></div>
+        <div class="menuItem"><%= link_to "About", about_path %></div>
+        <div class="menuItem"><%= link_to "FAQ", faq_path %></div>
+        <div class="menuItem"><%= link_to "Contact Us", contact_path %></div>
+      </div>
+
+      <div id="searchDiv">
+        <%= form_tag(search_path, method: :get) do %>
+          <%= text_field_tag :searchField ,params[:search], {placeholder: "Search for title, autor, or key word..."} %>
+          <%= image_submit_tag "b-search.png", {"style": "vertical-align: middle; margin-left: -.7em"} %>
+        <% end %>
+      </div>
+
+      <div id="branding">
+        <div id="homelogo">
+          <%= link_to root_path do %>
+            <%= image_tag "b-homelogo.png" %>
+          <% end %>
+        </div>
+        <div id="loginDiv">
+          <% if session[:user_id].nil? %>
+            <%= link_to signup_path do %>
+              <%= image_tag "b-signuptop.png" %> or
+            <% end %>
+            <%= link_to signin_path do %>
+              <%= image_tag "b-sign-in.png" %>
+            <% end %>
+          <% else %>
+            Welcome <em><%= User.find(session[:user_id]).full_name %></em><br>
+            <%= link_to signout_path do %>
+              <%= image_tag "b-sign-out.png" %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      <div id="">
+        <%= yield %>
+      </div>
+      <div id="push" style="height: 40px"></div>
+      <div id="footer">
+        <div id="copyright"><a href="http://www.indiana.edu/comments/copyright.shtml" target="_blank">COPYRIGHT</a></div>
+        <div class="line"> | </div>
+        <div id="privacy"><a href="http://www.libraries.iub.edu/index.php?pageId=1137" target="_blank">PRIVACY POLICY</a></div>
+        <div class="line"> | </div>
+        <div id="accessibility"><a href="https://accessibility.iu.edu/help/" title="Having trouble accessing this web page because of a disability? Visit this page for assistance.">ACCESSIBILITY HELP</a></div>
+        <a href="https://tupress.temple.edu/" target="_blank">
+          <%= image_tag "temple.png", {style: "margin-right: 20px"} %></a>
+        <a href="https://iupress.org/" target="_blank">
+          <%= image_tag "iupress.png" %></a>
+      </div>
+
+    </div>
+  </body>
+</html>

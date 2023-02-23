@@ -1,0 +1,57 @@
+<div id="content">
+<div class="bookInfo">
+  <div class="coverimage">
+    <%= image_tag @annotation.book.thumbnail_med %>
+  </div>
+  <div class="bookSpecs">
+    <div class="bookTitle">
+      <%= link_to book_path(@annotation.book) do %>
+        <%= @annotation.book.title.html_safe %>
+      <% end %>
+    </div>
+    <div class="bookSubtitle">
+      <%= link_to book_path(@annotation.book) do %>
+        <%= @annotation.book.subtitle.html_safe %>
+      <% end %>
+    </div>
+    <div class="authorName">
+      By <%= @annotation.book.author_names.join(", ") %>
+    </div>
+    <div class="buybutton">
+      <a href="<%= @annotation.book.press.include?("Indiana") ? "https://iupress.org/" : "https://tupress.temple.edu/" %>" target="_blank">
+        <%= image_tag "b-buybook.png", alt: "Buy Book Online" %>
+        <%= link_to book_path(@annotation.book) do %>
+          <%= image_tag "b-onlinemedia.png", alt: "View Online Media" %>
+        <% end %>
+        <p><%= @annotation.book.press %></p>
+        <p>ISBN <%= @annotation.book.isbn %></p>
+        <p><%= @annotation.book.pages %> Pages</p>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div id="displaymedia">
+  <h2><%= @annotation.title %></h2>
+  <% if @annotation.streamable? %>
+    <%= @annotation.avalon_purl.html_safe %>
+  <% else %>
+    <a href="<%= "../assets/#{@annotation.image_name}" %>" target="_blank" >
+      <%= image_tag @annotation.image_thumb_name("large") %>
+    </a>
+  <% end %>
+
+  <div class="reference">
+    <h4>Media reference: <%= @annotation.page_reference %></h4>
+    <%= link_to book_path(@annotation.book) do %>
+    <%= image_tag "b-bookreturn.png" %>
+    <% end %>
+  </div>
+  <h2 class="clear">About this <%= @annotation.streamable? ? "recording" : "image" %></h2>
+  <div>
+    <p>
+      <%= @annotation.description.html_safe %>
+    </p>
+  </div>
+</div>
+</div>

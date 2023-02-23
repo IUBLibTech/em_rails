@@ -1,0 +1,157 @@
+<div id="content">
+  <div class="indent-content">
+    <div id="login">
+      <h3>Registration</h3>
+      <p>
+        Please fill in the form below to request an account for the Ethnomusicology Multimedia website.
+        Upon completion, you will be sent a confirmation email explaining how to activate your account.
+        <b>Please note, your password must be at least 12 characters long</b>
+      </p>
+      <% if @user.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@user.errors.count, "error") %> prevented your account from being created:</h2>
+          <ul>
+            <% @user.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div>
+        <% if flash[:warning] || flash.now[:warning] %>
+          <p id="warning"><%= flash[:warning] ||= flash.now[:warning] %></p>
+        <% end %>
+      </div>
+      <%= form_for @user, html: {onsubmit: "return validate()"} do |form| %>
+        <%= form.hidden_field :password_converted, { value: true } %>
+        <table class="regForm">
+          <tbody>
+            <tr>
+              <td class="tdLabel"><label for="first_name" class="label">First Name:</label></td>
+              <td class="tdInput"><%= form.text_field :first_name %></td>
+            </tr>
+            <tr>
+              <td class="tdLabel"><label for="last_name" class="label">Last Name:</label></td>
+              <td class="tdInput"><%= form.text_field :last_name %></td>
+            </tr>
+            <tr>
+              <td class="tdLabel"><label for="regForm_email" class="label">Email Address:</label></td>
+              <td class="tdInput"><%= form.text_field :email %></td>
+            </tr>
+            <tr>
+              <td class="tdLabel"><label for="passwordField" class="label">Password:</label></td>
+              <td class="tdInput"><%= form.password_field :password %></td>
+            </tr>
+            <tr>
+              <td class="tdLabel"><label for="regForm_password2" class="label">Confirm Password:</label></td>
+              <td class="tdInput"><%= form.password_field :password_confirmation%></td>
+            </tr>
+            <tr>
+              <td class="tdCheckboxLabel">
+              </td>
+              <td class="tdCheckboxInput">
+                <%= form.check_box :agreed_to_eula %>
+                <label for="agreed_to_eula" class="checkboxLabel"> By checking this box you agree to abide by the End Users License Agreement.</label> </td>
+            </tr>
+            <tr>
+              <td colspan="2"><div class="formButton"><%= form.submit "Register" %>
+              </div></td>
+            </tr>
+          </tbody>
+        </table>
+      <% end %>
+    </div>
+    <div id="eula">
+      <h4>Ethnomusicology Multimedia End Users License Agreement </h4>
+      <p>
+        In order to access the audiovisual recordings and images on the Ethnomusicology Multimedia
+        website, you must read and agree to comply with the following end users license agreement
+        (EULA). The EULA is intended to protect the rights of the subjects appearing within the
+        recordings, the authors, the Ethnomusicology Multimedia Project (EM), and Indiana University
+        (IU).  It describes the obligations of anyone who accesses the material on the EM website.
+        All users of the site must comply with the terms of the EULA. Failure to do so will result
+        in termination of your access to the site and may subject you to civil and criminal penalties.
+      </p>
+      <p>
+        The materials on the EM website are protected by copyright and other laws. Users may access
+        the recordings <u>solely</u> for their individual and nonprofit educational and research
+        purposes. Users may NOT make or distribute copies of the materials or their contents, in
+        whole or in part, for any purpose. Users may NOT share their login credentials (username
+        and password) with anyone else.
+      </p>
+      <p>
+        The EM website may be temporarily unavailable from time to time for maintenance or other reasons.
+        IU assumes no responsibility for any error, omission, interruption, deletion, defect, delay in
+        operation or transmission, or communications line failure, involving EM. IU is not responsible
+        for any technical malfunction or other problems of any telephone network or service, computer
+        systems, servers or providers, computer or mobile phone equipment, software, failure of access
+        on account of technical problems or traffic congestion on the Internet or at any part of the
+        site, or combination thereof, or for any resulting injury including injury or damage to user's
+        or to any other person's computer, mobile phone, or other hardware or software, related to or
+        resulting from accessing and using the website.
+      </p>
+      <p>
+        In no event will IU or its trustees, employees, or agents be liable to you or any third person
+        for any direct, indirect, consequential, exemplary, incidental, special or punitive damages,
+        including for any lost profits or lost data arising from your use of the site content or other
+        materials on, accessed through or downloaded from the site, even if IU is aware or has been
+        advised of the possibility of such damages. You acknowledge that because no fees are paid to
+        IU for use of the site or its services, you shall not be entitled to damages of any kind from
+        IU, regardless of the nature of the claim or cause of action and under any theory in law or equity.
+      </p>
+      <p>
+        IU reserves the right to change any and all content, software and other items used or contained
+        in the EM website and any services and platform applications offered through the EM website at
+        any time without notice.
+      </p>
+      <p>
+        Any claim or cause of action you wish to assert involving the EM website or its services must
+        be brought in a court of competent jurisdiction and appropriate venue within the State of
+        Indiana, and shall be governed by Indiana and any applicable federal law, without reference
+        to choice of law principles. Nothing in the preceding sentence shall be construed to waive
+        IU's sovereign immunity or to modify the disclaimers and limitations of liability provided
+        above.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<script type="text/javascript" charset="utf-8">
+
+
+    function validate() {
+      let eMsg = ""
+      if (document.forms["new_user"]["user_first_name"].value === "") { eMsg = addError(eMsg, "First Name Required") }
+      if (document.forms["new_user"]["user_last_name"].value === "") { eMsg = addError(eMsg, "Last Name Required") }
+      if (document.forms["new_user"]["user_email"].value === "") { eMsg = addError(eMsg, "Email Address Required") }
+      if (document.forms["new_user"]["user_password"].value === "" || document.forms["new_user"]["password_confirmation"].value === "") {
+          eMsg = addError(eMsg, "Password Required")
+      } else if (document.forms["new_user"]["user_password"].value.length < 12 || document.forms["new_user"]["user_password_confirmation"].value.length < 12) {
+          eMsg = addError(eMsg, "Passwords must be at least 12 characters long")
+      } else if (document.forms["new_user"]["user_password"].value != document.forms["new_user"]["user_password_confirmation"].value) {
+          eMsg = addError(eMsg, "Passwords Do Not Match")
+      }
+      if (!document.getElementById('user_agreed_to_eula').checked) {
+          eMsg = addError(eMsg, "You must agree to the End User Licensing Agreement to create an account.")
+      }
+      document.getElementById("warning").innerHtml("");
+      if (eMsg != "") {
+          document.getElementById("warning").innerHtml(eMsg);
+          return false;
+      } else {
+          return true;
+      }
+  }
+
+  function addError(log, error) {
+      if (log != "") { log += "<br/>"}
+      log += error;
+      return log;
+  }
+
+</script>
+
+
+
+

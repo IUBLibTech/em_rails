@@ -1,0 +1,14 @@
+<div id="content">
+  <div class="indent-content wide">
+    <h3>Resent Activation Code</h3>
+    <p>
+      Enter your email address to resend a link to activate your account.
+    </p>
+    <%= form_for @user, as: :get, url: reactivate_path do |f| %>
+      <label for="email">Email Address</label>
+      <%= f.text_field :email %>
+      <%= f.submit "Resend Activation Email" %>
+    <% end %>
+  </div>
+</div>
+

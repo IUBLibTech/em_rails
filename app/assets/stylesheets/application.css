@@ -1,0 +1,759 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+html, body {
+    height: 100%;
+}
+body {
+    width: 996px;
+    margin: 0 auto;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 14px;
+    height: 100%;
+    background: #005e72 url("b-indexbkgrd.jpg") center top no-repeat;
+    /*    background: #005e72; */
+    color: #333;
+}
+p {
+    font-size: 12px;
+    margin: 0 0 1em 0;
+}
+
+
+a {
+    text-decoration: none;
+    color: #882244;
+}
+a:hover, a:active, a:focus {
+    color: #a73258;
+}
+a:hover p, a:active p, a:focus p {
+    color: #a73258;
+}
+
+
+h3 {
+    margin-bottom: 4px;
+    font-size: 17px;
+}
+
+#container {
+    position: relative;
+    min-height: 100%;
+    background: #FFF url("b-contbkgrd.png") center 41px no-repeat;
+    opacity:0.95;
+    filter:alpha(opacity=950); /* For IE8 and earlier */
+}
+
+
+#branding {
+    /*background-image: url(../img/branding.jpg);*/
+    /*height: 87px;*/
+}
+
+#homelogo {
+    float: left;
+    padding: 15px 0 30px 1.5%;
+    width: 37%;
+}
+
+#loginDiv {
+    float: right;
+    padding: 15px 3% 5px 0;
+    width: 58%;
+    text-align: right;
+    line-height: 26px;
+    /*    position: relative;*/
+    /*    top: 30px;*/
+    /*    right: 10px;*/
+}
+
+
+#searchDiv {
+    float: right;
+    padding: 5px 3% 5px 0;
+    width: 58%;
+    text-align: right;
+}
+
+#searchDiv form {
+    float: right;
+}
+
+#searchField {
+    width: 250px;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+#searchField.blank {
+    color: rgb(100,100,100);
+}
+#searchField.full {
+    color: rgb(0,0,0);
+}
+
+
+#homeintro {
+    clear: both;
+    width: 100%;
+}
+
+body#home #homeintro {
+    display: block;
+}
+
+#intrologo {
+    width: 30%;
+    float: left;
+    padding: 5px 0 5px 3%;
+    text-align: right;
+}
+
+#introtext {
+    width: 62%;
+    float: left;
+    padding: 5px 3% 45px 1.2%;
+    text-align: left;
+}
+#introtext h2 {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 180%;
+    line-height: 100%;
+    margin: 50px 0 0 0;
+}
+#introtext p {
+    margin: 5px 0 5px 0;
+    font-size: 120%;
+}
+
+
+#social {
+    width: 60%;
+    float: left;
+    padding: 5px 0 5px 0;
+    text-align: left;
+}
+
+.fb_iframe_widget {
+    top: -7px;
+}
+
+
+#content {
+    clear: both;
+    height: 100%;
+    margin: 0 0 0 2%;
+    min-height: 550px;
+    background: url("b-contentbkgrd.png") left top no-repeat;
+    opacity: 1;
+    filter:alpha(opacity=1000); /* For IE8 and earlier */
+}
+#home {
+    clear: both;
+    height: 100%;
+    margin: 0 0 0 2%;
+    background: url("b-contentbkgrd.png") left top no-repeat;
+    opacity: 1;
+    filter:alpha(opacity=1000); /* For IE8 and earlier */
+}
+
+#content h3 {
+    margin: .9em 0 .9em 0;
+}
+
+#menu {
+    background: #882244;
+    height: 42px;
+    padding: 0 0 0 160px;
+}
+.menuItem {
+    float: left;
+    /*    width: 20%;*/
+    /*text-align: center;*/
+    padding: 12px 30px 0 0;
+}
+.menuItem a {
+    color: #eee;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: .9em;
+}
+.menuItem a:hover,  .menuItem a:active,  .menuItem a:focus  {
+    color: #fff;
+}
+
+
+.bg {
+    /*     background: #EAECEB;*/
+    /*     border-top: 1px solid #D3D3D3;*/
+}
+
+.button span {
+    font-size: 0.7em;
+}
+.tabContent {
+    overflow: auto;
+}
+.clear {
+    clear: both;
+}
+img {
+    border: none;
+}
+.errorMessage {
+    color: red;
+}
+em.user {
+    font-style: normal;
+    font-weight: bold;
+}
+
+a, h1, h2, h3, .red, em.user {
+    /*    color: #9D0034*/
+}
+
+
+#footer {
+    /*    bottom: 0;*/
+    clear: both;
+    height: 60px;
+    width: 94%;
+    /*position: absolute;*/
+    text-align: right;
+    padding: 8px 3% 0 3%;
+    border-top: 1px solid #ccc;
+}
+#copyright {
+    /*    position: absolute;*/
+    /*    bottom: 12px;*/
+    /*    left: 25px;*/
+    padding: 10px 20px 0 0;
+    float: left;
+}
+.line {
+    /*    position: absolute;*/
+    /*  bottom: 12px;*/
+    /*    left: 135px;*/
+    /*    color: #A3A3AB;*/
+    padding: 9px 20px 0 0;
+    float: left;
+}
+
+#footer a {
+    /*    color: #A3A3AB;*/
+    /*    text-decoration: none;*/
+    /*    font-weight: bold;*/
+}
+#privacy {
+    /*    position: absolute;*/
+    /*    bottom: 12px;*/
+    /*    left: 150px;*/
+    padding: 10px 20px 0 0;
+    float: left;
+}
+#accessibility {
+    padding: 10px 0 0 0;
+    float: left;
+}
+
+
+.pressEm {
+    font-weight: bold;
+    font-style: normal;
+}
+.left {
+    float: left;
+    width: 60%;
+    padding-right: 10px;
+}
+.right {
+    float: left;
+    width: 35%;
+}
+.bookInfo {
+    font-size: 0.8em;
+    padding: 15px 20px 15px 20px;
+}
+.bookTitle p {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin: 0 0 0 0;
+    font-size: 13px;
+}
+
+.bookSubtitle p {
+    margin: 0 0 10px 0;
+}
+.bookSubtitle a {
+    color: #737375;
+}
+.bookAuthors p {
+    color: #333;
+}
+
+.smaller {
+    font-size: 85%
+}
+
+.indent-content {
+    padding: 2px 0 0 20px;
+    /*    width: 97%;*/
+}
+
+.wide {
+    padding: 20px 137px 10px 157px;
+}
+
+.indent-content p, .indent-content ul, .indent-content ol, .indent-content u {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 110%;
+    line-height: 130%;
+}
+h1.bookTitle {
+    padding: .8em 0 .6em 2%;
+    margin: 0;
+}
+
+#branding #loginDiv a img {
+    vertical-align: -6px;
+}
+
+h3 {
+}
+.featured {
+    float: left;
+    width: 31.5%;
+    margin-right: 2%;
+}
+.text {
+    margin-left: 2%;
+    padding-right: 2%;
+    width: 25%;
+}
+
+.text p {
+    font-family:  "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 100%;
+    line-height: 170%;
+}
+.text ul {
+    font-family:  "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 100%;
+    line-height: 170%;
+    list-style-type: none;
+    padding: 0;
+    margin-left: 15px;
+}
+.text li {
+    margin: 10px 0;
+}
+.text li span {
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 320%;
+    line-height: 0;
+    color: #439caf;
+    margin: 0 10px 0 -35px;
+    vertical-align: -25px;
+}
+
+
+
+.featuredBookWrap {
+    float: left;
+    margin: 8px 18px 7px 0;
+    width: 307px;
+    height: 185px;
+    background: url("b-featurebkgrd.png");
+    position: relative;
+}
+.featuredBook {
+    padding: 8px 6px 0 8px;
+    font-size: 13px;
+}
+.featureImg {
+    float: left;
+    margin: 4px 8px 0 0;
+    width: 115px;
+    height: 160px;
+    overflow: hidden;
+}
+
+.bookSubtitle, .bookTitle {
+    min-height: 18px;
+}
+.bookAuthors {
+    padding-top: 5px
+}
+.authors {
+    margin-top: 15px;
+    font-size: 0.8em;
+}
+.press {
+    margin-bottom: 15px;
+    font-size: 0.8em;
+}
+.buy {
+    position: absolute;
+    left: 128px;
+    top: 152px;
+}
+#moreBooks {
+    padding: 45px 0 0 20px;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+
+
+.featuredMovWrap {
+    float: left;
+    margin: 8px 0 7px 0;
+    width: 307px;
+    height: 185px;
+    background: url("b-featurebkgrd.png");
+    position: relative;
+}
+.featuredRecording {
+    padding: 8px 6px 0 8px;
+    font-size: 13px;
+}
+.featureMediaimg {
+    float: left;
+    margin: 0 8px 0 6px;
+    width: 120px;
+    height: 90px;
+    overflow: hidden;
+    /*border: 1px solid #ddd;*/
+    position: relative;
+}
+
+.featurearrow {
+    height: 19px;
+    width: 25px;
+    background: url("b-arrow.png");
+    position: absolute;
+    left: 47px;
+    top: 24px;
+    z-index: 999;
+}
+
+.mediaAnnotation {
+    clear: both;
+    padding: 0;
+    font-size: 13px;
+    line-height: 17px;
+    overflow: hidden;
+}
+
+.mediaTitle p {
+    font-size: .8em;
+    font-weight: bold;
+    margin: 0;
+}
+
+.mediaSubtitle {
+    margin: 0;
+}
+.mediaSubtitle p {
+    font-size: .8em;
+    margin: 0 0 4px 0;
+}
+
+.featuredRecording .authors {
+    margin-top: 0;
+    font-size: 0.8em;
+}
+.featuredRecording .press {
+    margin-bottom: 15px;
+    font-size: 0.8em;
+}
+
+#tagCloud {
+    cursor: default;
+    padding: 5px;
+}
+.xxsmall {font-size: 0.5em; }
+.xsmall {font-size: 0.7em; }
+.small {font-size: 0.9em; }
+.mediums {font-size: 1.1em; }
+.medium { font-size: 1.3em; }
+.mediuml { font-size: 1.5em; }
+.large { font-size: 1.7em; }
+.xlarge { font-size: 1.9em; }
+.xxlarge { font-size: 2.1em; }
+
+
+#login {
+    float: left;
+    width: 40%;
+    min-height: 500px;
+    margin-right: 20px;
+}
+#eula {
+    float: left;
+    width: 50%;
+}
+#eula p {
+
+    font-family: Tahoma, Geneva, sans-serif;
+}
+#regForm {
+    width: 330px;
+}
+#regButton {
+    float: left;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Flex replacement for hacked css above */
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 8px 0 0 8px;
+}
+.col {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+}
+.book {
+    margin: 8px 18px 7px 0;
+    width: 307px;
+    height: 185px;
+    background: url("b-featurebkgrd.png");
+    float: left;
+}
+.bCol1 {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 106px;
+}
+.bCol2 {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 180px;
+    padding-left: 18px;
+}
+.bookThumb {
+    max-height: 160px;
+}
+
+.coverimage {
+    width: 150px;
+    height: 200px;
+    margin-right: 20px;
+    margin-left: 137px;
+    float: left;
+}
+.coverimage > img {
+    max-height: 100%;
+    max-width: 100%;
+}
+#bookSection {
+    clear: both;
+    padding: 20px 0 0 0;
+    width: 975px;
+}
+#bookSection h3 {
+    border-bottom: 1px solid #bbb;
+    padding-bottom: 4px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+}
+.bookSpecs {
+    margin: 0 165px 0 307px;
+}
+.bookSpecs p {
+    font-size: 14px;
+    margin: 0;
+}
+/*.bookTitle p {*/
+/*    font-size: 18px;*/
+/*    font-weight: bold;*/
+/*}*/
+.bookinfo {
+    font-size: 0.8em;
+    padding: 15px 20px 15px 20px;
+    color: black;
+}
+.column {
+    width: 285px;
+    margin-right: 20px;
+    padding: 0 0 25px 20px;
+    float: left;
+    min-height: 380px;
+    background: url('b-columnbkgrd.png') left top no-repeat;
+    font-family: "Palatino Linotype","Book Antiqua",Palatino,serif;
+    font-size: 14px;
+    line-height: 170%;
+}
+.column p {
+    font-family: "Palatino Linotype","Book Antiqua",Palatino,serif;
+    font-size: 14px;
+    line-height: 170%;
+}
+.column h3 {
+    color: #333
+}
+.authorName {
+    margin: 15px 0 20px 0;
+}
+.buybutton {
+    margin: 20px 0 20px 0;
+}
+#mediaSection {
+    clear: both;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    padding-top: 12px;
+    margin: 0 0 0 -2%;
+    background: #c2d0d3;
+    height: 100%;
+}
+#mediaSection p.divider {
+    font-size: 16px;
+    display: inline;
+    margin: 0;
+    padding: 0 108px 4px 40px;
+}
+#mediaSection p.target {
+    display: inline;
+    margin: 0;
+    padding: 0 20px 0 0px;
+}
+#mediaContent {
+    clear: both;
+    margin-left: 2%;
+    margin-top: 8px;
+    border-top: 1px solid #BBBBBB;
+}
+#mediaContent h3 {
+    font-size: 30px;
+    clear: both;
+    color: #fff;
+    margin: 0 0 0 20px;
+    padding-top: 30px;
+    text-transform: uppercase;
+}
+.featuredMovWrap {
+    background: url(b-featurebkgrd.png) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    float: left;
+    height: 185px;
+    margin: 8px 18px 7px 0;
+    position: relative;
+    width: 307px;
+    overflow: hidden;
+}
+.annoImg, .annoAudioImg {
+    border: 1px solid #DDDDDD;
+    float: left;
+    height: 90px;
+    margin: 0 8px 0 8px;
+    overflow: hidden;
+    position: relative;
+    width: 120px;
+    background: #000506;
+}
+.annoAudioImg {
+    background-image: url('audio_thumb.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #F2F7F8;
+}
+.innerbox {
+    font-size: 13px;
+    padding: 8px 6px 0 8px;
+}
+.annoTitle {
+    clear: both;
+    font-size: 13px;
+    line-height: 17px;
+    font-weight: 400;
+    overflow: hidden;
+    padding: 0 0 0;
+}
+.scroll {
+    clear: both;
+    float: right;
+    margin-right: 20px;
+}
+#displaymedia {
+    clear: both;
+    padding: 20px 137px 10px 157px;
+}
+#displaymedia h2 {
+    margin-top: 25px;
+}
+#displaymedia div.reference {
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 11px;
+    line-height: 15px;
+    margin: 0;
+    float: right;
+    text-align: right;
+}
+#displaymedia p {
+    font-family: "Palatino Linotype","Book Antiqua",Palatino,serif;
+    font-size: 14px;
+    line-height: 170%;
+}
+#displaymedia div {
+    font-family: "Palatino Linotype","Book Antiqua",Palatino,serif;
+    font-size: 14px;
+    line-height: 170%;
+}
+
+#intrologo {
+    width: 30%;
+    float: left;
+    padding: 5px 0 5px 3%;
+    text-align: right;
+}
+#introtext {
+    width: 62%;
+    float: left;
+    padding: 5px 3% 45px 1.2%;
+    text-align: left;
+}
+
+#warning {
+    font-weight: bold;
+    color: red;
+    font-size: 1.2rem;
+}
+
+#login {
+    float: left;
+    width: 45%;
+    min-height: 500px;
+    margin-right: 20px;
+}
+.wide {
+    padding: 20px 137px 10px 157px;
+}
+
+h4.search {
+    padding: 0.8em 0 0.6em 2%;
+}

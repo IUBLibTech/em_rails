@@ -1,0 +1,55 @@
+<div id="content">
+  <% if action_name == "search" %>
+    <h4 class="search">Search Results For: <i>"<%= params[:searchField] %>"</i></h4>
+  <% else %>
+    <h1 class="bookTitle">Books</h1>
+  <% end %>
+<% @books.each_with_index do |b, index| %>
+  <% if index % 3 == 0 %>
+    <div class="" data-row="<%= index % 3 %>">
+  <% end %>
+
+  <div class="" data-index="<%= index %>">
+    <div class="book">
+      <div class="row">
+        <div class="bCol1">
+          <%= link_to book_path(b) do %>
+            <%= image_tag "#{b.thumbnail_small}", class: "bookThumb" %>
+          <% end %>
+        </div>
+        <div class="bCol2">
+          <div class="bookTitle">
+            <%= link_to book_path(b) do %>
+              <%= b.title.html_safe %>
+            <% end %>
+          </div>
+          <div class="bookSubtitle">
+            <%= link_to book_path(b) do %>
+              <%= b.subtitle.html_safe %>
+            <% end %>
+          </div>
+          <div class="bookAuthors">
+            <p>
+            By <%= b.authors.collect{|a| "#{a.first_name}#{a.middle_name.blank? ? "" : " "+a.middle_name} #{a.last_name}"}.join(", ").html_safe %>
+              <br> <%= b.press %>
+              <br> <%= b.published_date.split('/').last %>
+            </p>
+          </div>
+          <div class="links">
+            <a href="<%= b.press.include?("Indiana") ? "https://iupress.org/" : "https://tupress.temple.edu/" %>" target="_blank">
+              <%= image_tag "b-buybook.png", alt: "Buy Book Online" %>
+              <%= link_to book_path(b) do %>
+                <%= image_tag "b-onlinemedia.png", alt: "View Online Media" %>
+              <% end %>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <% if index >= 2 && (index - 2) % 3 == 0 %>
+    </div>
+  <% end %>
+<% end %>
+</div>
