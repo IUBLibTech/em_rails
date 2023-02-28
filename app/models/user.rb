@@ -13,17 +13,18 @@ class User < ApplicationRecord
   validates :password_confirmation, presence: true, if: :creating?
   validate :user_agreed_to_eula
 
-  before_save :encrypt_password
-
-
   def full_name
     "#{first_name}#{middle_name.blank? ? "" : " "+middle_name} #{last_name}"
   end
 
+  # this cannot be utilized as a callback because there are 3 different instances where a User object is saved:
+  # 1) creation, in which case user.password is available and should be hashed
+  # 2) account activation, in which case the user.password IS NOT present and re-encrypting that password encrypts with nil
+  # 3) password reset, in which case user.password is again present and should be hashed
   def encrypt_password
+    debugger
     self.password_salt = BCrypt::Engine.generate_salt
     self.password_hash = BCrypt::Engine.hash_secret(password,password_salt)
-    self.password_confirmation = BCrypt::Engine.hash_secret(password_confirmation,password_salt)
   end
 
   def self.authenticate(email, password)

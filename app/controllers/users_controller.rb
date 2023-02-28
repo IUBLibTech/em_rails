@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   def activate
     @user = User.find_by(account_activation_key: params[:key])
     if @user && !@user.account_activated
+      @user.skip_username_validation = true
       @user.update(account_activated: true)
       flash[:notice] = "You have successfully activated your account. You can now login."
       redirect_to signin_path
@@ -47,7 +48,8 @@ class UsersController < ApplicationController
         redirect_to request_reset_path
       else
         now = DateTime.now
-        key = BCrypt::Engine.hash_secret("#{now.to_s}_#{@user.email}", BCrypt::Engine.generate_salt)
+        key = SecureRandom.urlsafe_base64(64, false)
+        @user.skip_username_validation = true
         @user.update!(password_reset_key: key, password_reset_key_timestamp: now)
         # using deliver_now because there is no Job adapter for this application
         UserMailer.with(user: @user, base_url: request.base_url).email_password_reset.deliver_now
@@ -70,6 +72,10 @@ class UsersController < ApplicationController
       end
     elsif request.post?
       @user = User.find(params[:id])
+      @user.skip_username_validation = true
+      @user.password = params[:user][:password]
+      @user.password_confirmation = params[:user][:password_confirmation]
+      @user.encrypt_password
       saved = @user.update(user_params)
       if saved
         flash[:notice] = "You have successfully reset your password."
@@ -99,8 +105,9 @@ class UsersController < ApplicationController
   # POST /users or /users.json
   def create
     @user = User.new(user_params)
-    # create an activation code and attach to the new user
     @user.account_activation_key = SecureRandom.urlsafe_base64(64, false)
+    # see user.encrypt_password for why this is not implemented as a callback and needs to be done here
+    @user.encrypt_password
     if @user.save
       UserMailer.with(user: @user, base_url: request.base_url).email_account_activation.deliver_now
       redirect_to activation_path
