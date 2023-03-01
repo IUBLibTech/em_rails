@@ -5,24 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c29ebb42-5ad2-465f-b5df-e332bdc4dce0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/models/user_book.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/books/index.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/books/show.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/layouts/about.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/layouts/contact.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/layouts/faq.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/layouts/home.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/user_mailer/email_account_activation.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/user_mailer/email_password_reset.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/user_mailer/email_password_reset.text.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/user_mailer/emil_account_activation.text.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/users/_login_form.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/users/activation.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/users/login.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/users/password_reset_requested.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/users/password_reset_show.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/users/reactivation.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/users/reset.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
