@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c29ebb42-5ad2-465f-b5df-e332bdc4dce0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/credentials/production_dev.yml.enc" beforeDir="false" afterPath="$PROJECT_DIR$/config/credentials/production_dev.yml.enc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/sunspot.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/sunspot.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/webpacker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/webpacker.yml" afterDir="false" />
-    </list>
+    <list default="true" id="c29ebb42-5ad2-465f-b5df-e332bdc4dce0" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
