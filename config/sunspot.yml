@@ -4,4 +4,9 @@ development:
     port: 8983
     log_level: INFO
     path: /solr/em
-    
+production_dev:
+  solr:
+    hostname: <%= Rails.application.credentials[:solr_hostname] %>
+    port: <%= Rails.application.credentials[:solr_port] %>
+    log_level: INFO
+    path: <%= Rails.application.credentials[:solr_path] %>
