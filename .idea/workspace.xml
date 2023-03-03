@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c29ebb42-5ad2-465f-b5df-e332bdc4dce0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20221115174947_generate_image_files.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20221115174947_generate_image_files.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrate/20221110161215_create_annotations.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20221110161215_create_annotations.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrate/20230119170612_import_annotation_thumbs.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20230119170612_import_annotation_thumbs.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
