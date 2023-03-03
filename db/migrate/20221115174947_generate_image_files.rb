@@ -1,4 +1,4 @@
-class CreateImageFiles < ActiveRecord::Migration[6.1]
+class GenerateImageFiles < ActiveRecord::Migration[6.1]
   LOCATION = "#{Rails.root}/app/javascript/images"
   def up
     all = Image.all
