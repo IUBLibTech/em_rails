@@ -2,7 +2,7 @@ class Book < ApplicationRecord
   require "mini_magick"
   LOCATION = "#{Rails.root}/app/assets/images"
 
-  has_many :user_books
+  has_many :user_books, optional: true
   has_many :users, through: :user_books
   has_many :annotations
 
