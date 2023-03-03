@@ -1,0 +1,19 @@
+#!/bin/bash
+SERVICE_NAME=em
+SERVICE_ROOT=/srv/services/em-prod-8353
+SERVICE_PORT=8353
+
+PID_FILE=$SERVICE_ROOT/tmp/pids/server.pid
+
+
+echo "Starting $SERVICE_NAME on port $SERVICE_PORT"
+
+if [ -e $PID_FILE ]; then
+    echo "$PID_FILE found! - $SERVICE_NAME appears to already be running."
+    echo "Exiting without starting $SERVICE_NAME"
+    exit 1
+fi
+
+if rails s -b 0.0.0.0 -p $SERVICE_PORT -d; then
+    echo "Starting $SERVICE_NAME on port $SERVICE_PORT"
+fi
