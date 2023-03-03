@@ -17,6 +17,7 @@ class ImportAuthors < ActiveRecord::Migration[6.1]
       raise "Failed to find user with id: #{row['userid'].to_i}" if user.nil?
       raise "Failed to find book with id: #{row['book_id'].to_i}" if book.nil?
       user.author_user = true
+      user.skip_username_validation
       user.save!
       UserBook.new(user: user, book: book).save!
     end
