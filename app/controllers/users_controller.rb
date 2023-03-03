@@ -72,6 +72,7 @@ class UsersController < ApplicationController
       end
     elsif request.post?
       @user = User.find(params[:id])
+      @user.password_converted = true
       @user.skip_username_validation = true
       @user.password = params[:user][:password]
       @user.password_confirmation = params[:user][:password_confirmation]
