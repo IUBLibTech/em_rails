@@ -22,7 +22,6 @@ class User < ApplicationRecord
   # 2) account activation, in which case the user.password IS NOT present and re-encrypting that password encrypts with nil
   # 3) password reset, in which case user.password is again present and should be hashed
   def encrypt_password
-    debugger
     self.password_salt = BCrypt::Engine.generate_salt
     self.password_hash = BCrypt::Engine.hash_secret(password,password_salt)
   end
