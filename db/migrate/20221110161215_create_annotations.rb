@@ -18,6 +18,7 @@ class CreateAnnotations < ActiveRecord::Migration[6.1]
       # the MCO embeddable iframe URL
       t.string :avalon_purl
       t.integer :image_id, limit: 8
+      t.integer :thumb_id, limit: 8
       t.timestamps
     end
   end
