@@ -94,4 +94,5 @@ Rails.application.configure do
     :openssl_verify_mode => 'none',
     enable_starttls_auto: true  }
 
+  config.hosts << "possum.dlib.indiana.edu"
 end
