@@ -1,15 +1,15 @@
-#!/bin/bash     
-SERVICE_NAME=em
-SERVICE_ROOT=/srv/services/em-prod-8353
-SERVICE_PORT=8353                                                                                                                                                                
-PID_FILE=$SERVICE_ROOT/tmp/pids/server.pid
+#!/bin/bash
+export PATH=/home/app_em/bin/node-v14.17.0/bin:/home/app_em/.rbenv/shims:/home/app_em/.rbenv/bin:/home/app_em/.rbenv/plugins/ruby-build/bin:/home/app_em/.rbenv/shims:/home/app_em/.rbenv/bin:/home/app_em/.local/bin:/home/app_em/bin:/srv/shared/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:$PATH
+PORT=8353
+APP_NAME="EM-prod"
+PID_FILE=/srv/services/em-prod-8353/tmp/pids/server.pid
 
 if [ -e $PID_FILE ]; then
-    echo "Stopping $SERVICE_NAME"
+    echo "Stopping $APP_NAME"
     kill $(cat $PID_FILE)
-    sleep 10
+    sleep 4
     if [ -e $PID_FILE ]; then
-	echo "Failed soft shutdown of $SERVICE_NAME"
+	echo "Failed soft shutdown of $APP_NAME"
 	echo "Killing process $(cat $PID_FILE)"
 	kill -9 $(cat $PID_FILE)
 	rm $PID_FILE
