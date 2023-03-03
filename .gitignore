@@ -39,3 +39,8 @@ yarn-debug.log*
 /config/credentials/production.key
 /config/credentials/local.key
 /config/credentials/production_dev.key
+
+/bin/iul_stop
+/bin/iul_start
+.iul_contacts.yml
+.iul_service.yaml
