@@ -1,0 +1,17 @@
+class: rails
+dependencies:
+  hard: {}
+  soft: {}
+nagios:
+  check: true
+  notify: false
+proxy: {}
+system:
+  autostart: true
+  environment: prod
+  group: service_rails_admins
+  name: em
+  path: /srv/services/em-prod-8353
+  port: 8353
+  runtime: default
+  user: app_em
