@@ -2,7 +2,7 @@
   <div class="indent-content wide">
     <h3>Registration Complete</h3>
     <p>
-      You should receive an email shortly detailing how to activate your account.
+      <%= flash.now[:notice].blank? ? flash[:notice] : flash.now[:notice] %>
     </p>
   </div>
 </div>

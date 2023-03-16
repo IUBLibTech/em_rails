@@ -1,4 +1,4 @@
-development:
+local:
   solr:
     hostname: localhost
     port: 8983

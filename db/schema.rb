@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2023_01_25_183421) do
 
-  create_table "annotations", charset: "utf8mb4", collation: "utf8mb4_bin", force: :cascade do |t|
+  create_table "annotations", charset: "utf8mb3", force: :cascade do |t|
     t.integer "book_id"
     t.text "title"
     t.text "description", size: :medium
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2023_01_25_183421) do
     t.integer "media_file_id"
   end
 
-  create_table "books", charset: "utf8mb4", collation: "utf8mb4_bin", force: :cascade do |t|
+  create_table "books", charset: "utf8mb3", force: :cascade do |t|
     t.string "isbn"
     t.string "title"
     t.text "description", size: :medium
@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 2023_01_25_183421) do
     t.index ["id"], name: "FKA9FAA5E0D2B3110D"
   end
 
-  create_table "images", charset: "utf8mb4", collation: "utf8mb4_bin", force: :cascade do |t|
+  create_table "images", charset: "utf8mb3", force: :cascade do |t|
     t.binary "image_bytes", size: :medium
     t.integer "width"
     t.integer "height"
@@ -64,12 +64,12 @@ ActiveRecord::Schema.define(version: 2023_01_25_183421) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "user_books", charset: "utf8mb4", collation: "utf8mb4_bin", force: :cascade do |t|
+  create_table "user_books", charset: "utf8mb3", force: :cascade do |t|
     t.integer "user_id"
     t.integer "book_id"
   end
 
-  create_table "users", charset: "utf8mb4", collation: "utf8mb4_bin", force: :cascade do |t|
+  create_table "users", charset: "utf8mb3", force: :cascade do |t|
     t.string "email"
     t.string "first_name"
     t.string "middle_name"

@@ -2,11 +2,16 @@ class UsersController < ApplicationController
   #before_action :set_user, only: %i[ show edit update destroy ]
 
   def activation
+    flash[:notice] = "You should receive an email shortly detailing how to activate your account."
     render 'activation'
   end
   def activate
     @user = User.find_by(account_activation_key: params[:key])
-    if @user && !@user.account_activated
+    if @user.nil? && !params[:key].blank?
+      flash[:notice] = "That activation key is no longer valid. Please request a new activation email."
+      @user = User.new
+      render 'users/reactivation'
+    elsif @user && !@user.account_activated
       @user.skip_username_validation = true
       @user.update(account_activated: true)
       flash[:notice] = "You have successfully activated your account. You can now login."
@@ -19,19 +24,28 @@ class UsersController < ApplicationController
       redirect_to reactivation_path
     end
   end
+
   def reactivation
     @user = User.new
+    flash.now[:notice] ="You must activate your account before you can login. Enter your email address to resend a link to activate your account."
     render 'users/reactivation'
   end
+
   def reactivate
     @user = User.find_by(email: params[:user][:email])
     if @user && !@user.account_activated
-      send_activation_email(@user)
-      flash.now[:notice] = "You should receive an email detailing how to activate you account shortly"
+      @user.account_activation_key = SecureRandom.urlsafe_base64(64, false)
+      @user.skip_username_validation = true
+      @user.save
+      UserMailer.with(user: @user, base_url: request.base_url).email_account_activation.deliver_now
+      flash[:notice] = "You should receive an email detailing how to activate you account shortly. Make sure to check your spam folder."
+      redirect_to activation_path
     elsif @user && @user.account_activated
-      flash.now[:notice] = "This account has already been activated."
+      flash[:notice] = "This account has already been activated."
+      redirect_to signin_path
     else
-      flash.now[:notice] = "No account with that email address could be found."
+      flash[:notice] = "No account with that email address could be found."
+      redirect_to signup_path
     end
   end
 

@@ -10,11 +10,17 @@ class SessionsController < ApplicationController
   def create
     @user = User.authenticate(params[:user][:email], params[:user][:password])
     if @user
-      session[:user_id] = @user.id
-      forward = session[:forward]
-      # only clear the forward if the user authenticates - keep it around if they typo their username/password
-      session[:forward] = nil
-      redirect_to forward || root_path
+      if @user.account_activated
+        session[:user_id] = @user.id
+        forward = session[:forward]
+        # only clear the forward if the user authenticates - keep it around if they typo their username/password
+        session[:forward] = nil
+        redirect_to forward || root_path
+      else
+        flash[:notice] = "You have not activ"
+        session[:forward] = nil
+        redirect_to reactivation_path
+      end
     else
       flash[:warning] = "No account could be found with that email address and/or password."
       redirect_to signin_path

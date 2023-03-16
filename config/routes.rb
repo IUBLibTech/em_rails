@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get 'activation', to: 'users#activation', as: "activation"
   get 'activate/:key', to: 'users#activate', as: "activate"
   get 'reactivation', to: 'users#reactivation', as: 'reactivation'
-  get "reactivate", to: "users#reactivate", as: "reactivate"
+  post "reactivate", to: "users#reactivate", as: "reactivate"
 
   get 'users/reset/:key', to: "users#reset", as: 'users_reset'
   post 'users/reset/:id', to: "users#reset"

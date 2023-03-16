@@ -41,7 +41,7 @@ gem 'sunspot_solr'
 # progress bar for sunspot rake tasks (like reindexing...)
 gem 'progress_bar'
 
-group :development, :test do
+group :development, :test, :local do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
