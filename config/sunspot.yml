@@ -10,3 +10,10 @@ production_dev:
     port: <%= Rails.application.credentials[:solr_port] %>
     log_level: INFO
     path: <%= Rails.application.credentials[:solr_path] %>
+
+production:
+  solr:
+    hostname: <%= Rails.application.credentials[:solr_hostname] %>
+    port: <%= Rails.application.credentials[:solr_port] %>
+    log_level: INFO
+    path: <%= Rails.application.credentials[:solr_path] %>
