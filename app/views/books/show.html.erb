@@ -8,13 +8,7 @@
       <div class="bookSubtitle"><p><em><%= @book.subtitle.html_safe %></em></p></div>
       <div class="authorName">By <%= @book.author_names.join(", ") %></div>
       <div class="buybutton">
-        <a href=
-          <% if @book.temple? %>
-             <%= temple_press_link %>
-          <% else %>
-             <%= iu_press_link %>
-          <% end %>
-             target="_blank"><%= image_tag "b-buybook.png", {alt: "Buy Book"} %></a>
+        <a href="<%= @book.buy_url %>" target="_blank"><%= image_tag "b-buybook.png", {alt: "Buy Book"} %></a>
       </div>
       <p><%= @book.press %>, <%= @book.published_year %></p>
       <p>ISBN <%= @book.isbn %></p>

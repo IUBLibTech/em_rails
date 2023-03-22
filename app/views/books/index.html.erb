@@ -36,7 +36,7 @@
             </p>
           </div>
           <div class="links">
-            <a href="<%= b.press.include?("Indiana") ? "https://iupress.org/" : "https://tupress.temple.edu/" %>" target="_blank">
+            <a href="<%= b.buy_url %>" target="_blank">
               <%= image_tag "b-buybook.png", alt: "Buy Book Online" %>
               <%= link_to book_path(b) do %>
                 <%= image_tag "b-onlinemedia.png", alt: "View Online Media" %>

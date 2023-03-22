@@ -5,19 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c29ebb42-5ad2-465f-b5df-e332bdc4dce0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/config/environments/local.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/em.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/em.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.ruby-version" beforeDir="false" afterPath="$PROJECT_DIR$/.ruby-version" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/sessions_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/sessions_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/users_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/users_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/activation.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/users/activation.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/reactivation.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/users/reactivation.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/credentials/local.yml.enc" beforeDir="false" afterPath="$PROJECT_DIR$/config/credentials/local.yml.enc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/sunspot.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/sunspot.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/annotations/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/annotations/show.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/books/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/books/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/books/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/books/show.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/home.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/home.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,20 +31,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/andrew/rails/rails_6/em/config/environments",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "yarn",
-    "ruby.rails.projectView.checked": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/andrew/rails/rails_6/em/config/environments&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;ruby.rails.projectView.checked&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/config/environments" />
@@ -180,7 +172,8 @@
       <workItem from="1668092211602" duration="16143000" />
       <workItem from="1668692598144" duration="21930000" />
       <workItem from="1674061275806" duration="100093000" />
-      <workItem from="1678816709421" duration="4609000" />
+      <workItem from="1678816709421" duration="5278000" />
+      <workItem from="1679417488884" duration="2119000" />
     </task>
     <servers />
   </component>
