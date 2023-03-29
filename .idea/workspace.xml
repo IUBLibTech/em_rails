@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c29ebb42-5ad2-465f-b5df-e332bdc4dce0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/em.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/em.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/webpacker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/webpacker.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/book.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/book.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/contact.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/contact.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/home.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/home.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,7 +174,8 @@
       <workItem from="1668692598144" duration="21930000" />
       <workItem from="1674061275806" duration="100093000" />
       <workItem from="1678816709421" duration="5278000" />
-      <workItem from="1679417488884" duration="3975000" />
+      <workItem from="1679417488884" duration="4932000" />
+      <workItem from="1680015237660" duration="2721000" />
     </task>
     <servers />
   </component>
@@ -187,19 +192,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="ruby-line">
-          <url>file://$PROJECT_DIR$/app/views/layouts/application.html.erb</url>
-          <line>26</line>
-          <properties myBlockOrdinal="-1">
-            <option name="block-ordinal" value="-1" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

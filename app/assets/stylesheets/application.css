@@ -57,6 +57,9 @@ h3 {
     filter:alpha(opacity=950); /* For IE8 and earlier */
 }
 
+.contacts {
+    padding: 5px 0% 0 3%;
+}
 
 #branding {
     /*background-image: url(../img/branding.jpg);*/
@@ -553,6 +556,7 @@ a {
     flex-direction: column;
     flex-basis: 180px;
     padding-left: 18px;
+    max-width: 170px;
 }
 .bookThumb {
     max-height: 160px;

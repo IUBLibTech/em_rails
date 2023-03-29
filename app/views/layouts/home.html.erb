@@ -19,7 +19,10 @@
     </p>
     <h3>How to use this site</h3>
     <ul>
-      <li><span>1</span><%= image_tag "b-signuptop.png", { "alt": "Sign up for a free account", "border": "0", "style":  "vertical-align: -6px" } %> <br>
+      <li><span>1</span>
+        <%= link_to signup_path do %>
+          <%= image_tag "b-signuptop.png", { "alt": "Sign up for a free account", "border": "0", "style":  "vertical-align: -6px" } %>
+        <% end %> <br>
         This will give you access to all the multimedia on this site.</li>
       <li><span>2</span>Search for your book<br>
         <%= form_tag(search_path, method: :get) do %>
@@ -28,7 +31,7 @@
         <% end %>
         Go to the book's page. Links to all the multimedia associated with that book will be there.
       </li>
-      <li><span>3</span>You can also <a href="bookListing.html">order books</a> or find out more information about the book and author.
+      <li><span>3</span>You can also <%= link_to "order books", books_path %> or find out more information about the book and author.
     </ul>
   </div>
 </div>
@@ -104,7 +107,7 @@
           <%= a.book.subtitle.html_safe %>
         </div>
         <div class="authors">
-          By <%= a.book.author_names.join(", ") %>
+          By <%= a.book.author_names %>
         </div>
 
         <div class="mediaAnnotation">

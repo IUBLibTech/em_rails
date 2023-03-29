@@ -44,7 +44,7 @@ class Book < ApplicationRecord
   end
 
   def author_names
-    authors.collect{|a| a.full_name }
+    authors.collect{|a| a.full_name }.join(", ")
   end
   # whenever called, this method first determines whether a thumbnail image of the book cover exists. If it does not, it
   # creates that thumbnail in the assets/images directory and returns the name of the thumbnail file
