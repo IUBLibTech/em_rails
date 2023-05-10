@@ -2,7 +2,8 @@ Rails.application.routes.draw do
 
   root "application#home"
   get '/', to: "application#home", as: "home"
-  #get '/index.html', to: "application#home", as: "foo"
+  get '/index.html', to: "application#home", as: "foo"
+
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
   get 'activation', to: 'users#activation', as: "activation"
