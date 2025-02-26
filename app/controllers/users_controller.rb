@@ -123,11 +123,11 @@ class UsersController < ApplicationController
     @user.account_activation_key = SecureRandom.urlsafe_base64(64, false)
     # see user.encrypt_password for why this is not implemented as a callback and needs to be done here
     @user.encrypt_password
-    if @user.save
+    if verify_recaptcha(model: @user) && @user.save
       UserMailer.with(user: @user, base_url: request.base_url).email_account_activation.deliver_now
       redirect_to activation_path
     else
-      render 'users/new'
+      render 'users/new', status: :unprocessable_entity
     end
   end
 

@@ -54,11 +54,11 @@
                 <label for="agreed_to_eula" class="checkboxLabel"> By checking this box you agree to abide by the End Users License Agreement.</label> </td>
             </tr>
             <tr>
-              <td colspan="2"><div class="formButton"><%= form.submit "Register" %>
-              </div></td>
             </tr>
           </tbody>
         </table>
+        <%= recaptcha_tags %>
+        <div class="formButton"><%= form.submit "Register" %></div>
       <% end %>
     </div>
     <div id="eula">

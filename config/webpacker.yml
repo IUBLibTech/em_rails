@@ -47,7 +47,7 @@ default: &default
     - .jpeg
     - .jpg
 
-development, production_dev:
+development, local, production_dev:
   <<: *default
   compile: true
 
